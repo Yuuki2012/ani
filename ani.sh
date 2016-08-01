@@ -29,7 +29,7 @@ function checkpackages {
 checkpackages
 
 URL="http://tv.yuuki-chan.xyz/json.php?key=$API_KEY&controller=search&query=$ARGS"
-RES=$(curl $URL)
+RES=$(curl -s $URL) > /dev/null
 ID=$(echo $RES | jq '.results[0].id' | tr -d '"')
 TI=$(echo $RES | jq '.results[0].title' | tr -d '"')
 EP=$(echo $RES | jq '.results[0].episode' | tr -d '"')
