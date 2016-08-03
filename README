@@ -1,1 +1,24 @@
-Nothing here yet
+# ani
+This is pretty much a clone of my Java version of the .ani command, it will show you the shows that will air soon on Japanese TV.
+
+### Usage
+```sh
+$ git clone https://github.com/Yuuki2012/ani.git
+$ cd ani $ chmod +x ani.sh
+$ ./ani.sh " " -1 # You can also use -2, -3, -4, -5, depending on what you want
+OR
+$ ./ani.sh \ -1 # As long as you escape spaces it'll work fine. 
+```
+
+### Output
+```
+> Tanaka-kun wa Itsumo Kedaruge Episode 4 airs on Animax in 0d 1h 18m 23s
+> Servamp Episode 5 airs on TOKYO MX in 0d 1h 18m 23s
+> 文化放送モバイルplus presents 生放送 Episode airs on Ultra! A&G+ in 0d 1h 18m 23s
+> 孤独のグルメ(5) Episode ^孤独のグルメスペシャル！真夏の東北・宮城出張編 airs on TV Tokyo in 0d 1h 18m 23s
+> 孤独のグルメ(5) Episode ^孤独のグルメスペシャル！真夏の東北・宮城出張編 airs on TV Aichi in 0d 1h 18m 23s
+```
+
+#### Requirements
+root user
+Everything else required will be installed once you run the tool.
