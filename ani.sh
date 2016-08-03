@@ -1,6 +1,6 @@
 #!/bin/bash
 ARGS=$1
-API_KEY="15b9666294d951546c3a3b4b1b2a83f55638473c"
+API_KEY="15b9666294d951546c3a3b4b1b2a83f55638473c" # Change this, it's not gonna work ;)
 JQ_INSTALLED=$(dpkg-query -W -f='${Status}' jq 2>/dev/null | grep -c "ok installed")
 CU_INSTALLED=$(dpkg-query -W -f='${Status}' curl 2>/dev/null | grep -c "ok installed")
 BC_INSTALLED=$(dpkg-query -W -f='${Status}' bc 2>/dev/null | grep -c "ok installed")
@@ -46,7 +46,7 @@ while true; do
     esac
 done
 
-URL="http://tv.yuuki-chan.xyz/json.php?key=$API_KEY&controller=search&query=$ARGS"
+URL="http://tv.yuuki-chan.xyz/json.php?key=$API_KEY&controller=search&query=$ARGS" # http://anitv.foolz.us/json.php?controller=search&query=$ARGS
 RES=$(curl -s $URL) > /dev/null
 for (( index=0; index<=$R; index++ ))
 do
@@ -59,7 +59,7 @@ do
     AD=$(echo $RES | jq '.results['$index'].anidb' | tr -d '"')
     NOW=$(TZ=":Asia/Tokyo" date +%s)
     DIFF=$(echo $AT-$NOW | bc)
-    TIME=$(printf "%dd %dh %dm %ds" $(( DIFF / (3600 * 24) ))  $(( (DIFF / 3600 ) % 24)) $(( (DIFF / 60) % 60)) $((DIFF % 60)))
+    TIME=$(printf "%dd %dh %dm %ds" $(( DIFF / (3600 * 24) ))  $(((DIFF / 3600) % 24)) $(((DIFF / 60) % 60)) $((DIFF % 60)))
 
     echo -e "\e[0m>\e[31m $TI\e[0m Episode\e[31m $EP\e[0m airs on\e[31m $ST\e[0m in\e[31m $TIME\e[0m"
 done
