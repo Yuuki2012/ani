@@ -26,7 +26,7 @@ function checkpackages {
         echo "One or more required packages are missing, install them? (y/n)"
         read REPLY
         if [ "$REPLY" = "y" ]; then
-            sudo apt-get install jq curl bc > /dev/null
+            sudo apt-get install -y jq curl bc > /dev/null
         fi
     fi
 }
